@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+    <form onsubmit="testFunction()">
+        First name:<br>
+        <textarea name="code" ></textarea>
+        <br>
+        Last name:<br>
+        <input type="text" name="lexer" value="python">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form> 
+
+    <script>
+        function testFunction() {
+            console.log('HERE');
+            $.post("https://hilite.me/api",
+        {
+          code: "Donald Duck",
+          lexer: "python"
+        },
+        function(data,status){
+            alert("Data: " + data + "\nStatus: " + status);
+        });
+    }
+    </script>
+
+</body>
+</html>
